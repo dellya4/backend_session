@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}My Wishlist{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">My Wishlist</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for wish in wishes %}
+    <div class="col">
+        <div class="card h-100">
+            {% if wish.image %}
+            <img src="{{ url_for('static', filename='uploads/' ~ wish.image) }}" class="card-img-top" alt="Wish image"
+                 style="height: 250px; object-fit: cover;">
+            {% else %}
+            <img src="{{ url_for('static', filename='placeholder.png') }}" class="card-img-top" alt="No image"
+                 style="height: 250px; object-fit: cover;">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ wish.name }}</h5>
+                <p class="card-text"><strong>Category:</strong> {{ wish.category }}</p>
+                <p class="card-text"><strong>Amount:</strong> ₸{{ wish.amount }}</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <a href="{{ url_for('wishlist.edit_wish', wish_id=wish.id) }}" class="btn btn-sm btn-warning">Edit</a>
+                <form action="{{ url_for('wishlist.delete_wish', wish_id=wish.id) }}" method="POST" style="display:inline;">
+                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

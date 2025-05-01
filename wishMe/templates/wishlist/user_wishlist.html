@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="mb-4">{{ viewed_user.username }}'s Wishlist</h1>
+
+<div class="row">
+    {% for wish in wishes %}
+    <div class="col-md-4">
+        <div class="card mb-4 {% if wish.reserved_by_id %}border-danger{% else %}border-success{% endif %}">
+            {% if wish.image %}
+            <img src="{{ url_for('static', filename='uploads/' ~ wish.image) }}" class="card-img-top" alt="Wish image"
+                 style="height: 250px; object-fit: cover;">
+            {% else %}
+            <img src="{{ url_for('static', filename='placeholder.png') }}" class="card-img-top" alt="No image"
+                 style="height: 250px; object-fit: cover;">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title {% if wish.reserved_by_id %}wish-reserved{% endif %}">{{ wish.name }}</h5>
+                <p class="card-text {% if wish.reserved_by_id %}wish-reserved{% endif %}">
+                    Category: {{ wish.category }}<br>
+                    Price: ₸{{ wish.amount }}
+                </p>
+
+                {% if wish.reserved_by %}
+                    <p class="reserved-by">Reserved by: {{ wish.reserved_by.username }}</p>
+                    {% if wish.reserved_by_id == current_user.id %}
+                    <form method="post" action="{{ url_for('wishlist.reserve_wish', wish_id=wish.id) }}">
+                        <button type="submit" class="btn btn-warning">Unreserve</button>
+                    </form>
+                    {% endif %}
+                {% else %}
+                    <form method="post" action="{{ url_for('wishlist.reserve_wish', wish_id=wish.id) }}">
+                        <button type="submit" class="btn btn-primary">Reserve</button>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

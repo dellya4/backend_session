@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Raleway:wght@600&display=swap');
+
+body {
+    background: linear-gradient(135deg, #E0C3FC, #8EC5FC);
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: #1A202C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+}
+
+.container {
+    background: rgba(247, 250, 252, 0.8);
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    padding: 15px;
+    margin: 7px;
+    width: 75%;
+}
+
+.navbar {
+    background: rgba(247, 250, 252, 0.95) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-brand {
+    font-size: 22px;
+    color: #1A202C !important;
+}
+
+.nav-link {
+    font-size: 18px;
+    color: #1A202C !important;
+    padding: 0.4rem 0.6rem;
+}
+
+.nav-link:hover {
+    color: #BB86FC !important;
+}
+
+.form-control {
+    border: 1px solid #D6BCFA;
+    border-radius: 8px;
+    background: #F7FAFC;
+    font-size: 0.9rem;
+}
+
+.form-control:focus {
+    border-color: #BB86FC;
+    box-shadow: 0 0 0 0.2rem rgba(187, 134, 252, 0.25);
+}
+
+.form-label {
+    font-size: 0.9rem;
+    color: #1A202C;
+}
+
+.form-check-input {
+    border-color: #D6BCFA;
+}
+
+.form-check-label {
+    font-size: 0.9rem;
+    color: #1A202C;
+}
+
+.input-group-text {
+    background: #F7FAFC;
+    border: 1px solid #D6BCFA;
+    color: #BB86FC;
+}
+
+.btn-primary {
+    background: #BB86FC;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s ease;
+    margin-top: 5px;
+}
+
+.btn-primary:hover {
+    background: #9F67FA;
+}
+
+.btn-warning {
+    background: #D6BCFA;
+    color: #1A202C;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+.btn-warning:hover {
+    background: #B794F4;
+}
+
+.btn-danger {
+    background: #FF6B6B;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+.btn-danger:hover {
+    background: #FF4C4C;
+}
+
+.btn-success {
+    background: #68D391;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+.btn-success:hover {
+    background: #4ADE80;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.card {
+    background: #F7FAFC;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    height: 440px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    flex: 1;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.card-footer {
+    padding: 0.5rem;
+    background: transparent;
+    border-top: none;
+}
+
+.alert-info {
+    background: #D6BCFA;
+    color: #1A202C;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.wish-reserved {
+    text-decoration: line-through;
+    color: #B2BEB5;
+}
+
+.reserved-by {
+    color: #784dbd;
+    font-weight: 600;
+}
